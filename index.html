@@ -1,24 +1,303 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Total Tourism</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Tourism - Your Adventure Awaits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        
+        /* --- 1. Basic Setup & Smooth Scroll --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-      header {
-        background-color: #333;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
-      }
+
+        /* This one line enables smooth scrolling for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: whitesmoke; 
+            color: darkslategray; 
+            line-height: 1.6;
+        }
+
+        /* --- 2. Hero Section Container --- */
+        .hero-section {
+            height: 100vh; /* Full viewport height */
+            width: 100%;
+            /* New background image.  
+               Using a placeholder from picsum.photos related to "tourism".
+               Replace with your own image URL.
+            */
+            background-image: url('https://picsum.photos/seed/tourism/1920/1080');
+            background-size: cover;
+            background-position: center center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white; 
+        }
+
+        /* --- 3. Dark Overlay --- */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.45); /* Dark overlay */
+            z-index: 1; 
+        }
+
+        /* --- 4. Centered Content --- */
+        .hero-content {
+            position: relative;
+            z-index: 2; /* On top of the overlay */
+        }
+
+        /* --- 5. "TOTAL" Neon Text --- */
+        h1.neon-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 12vw; 
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin: 0;
+
+            /* The Neon Effect */
+            color: transparent; 
+            -webkit-text-stroke: 2px white; 
+            text-stroke: 2px white; 
+
+            text-shadow:
+                0 0 5px white,  
+                0 0 10px white, 
+                0 0 15px cyan,  
+                0 0 20px cyan,  
+                0 0 30px cyan,  
+                0 0 40px cyan;  
+        }
+
+        /* --- 6. "TOURISM" Subtitle --- */
+        .hero-content h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5em; /* Wide spacing */
+            margin-top: -10px; 
+            margin-left: 0.5em; 
+        }
+
+        /* --- 7. "START YOUR ADVENTURE" Link --- */
+        .cta-link {
+            display: inline-block; 
+            margin-top: 40px;
+            color: white; 
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding-bottom: 5px;
+            border-bottom: 2px solid white; 
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover {
+            color: cyan; 
+            border-bottom-color: cyan; 
+        }
+
+        /* --- 8. Scroll Down Arrow (Now a Link) --- */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 44px;
+            height: 44px;
+            border: 2px solid white; 
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: white; 
+            text-decoration: none;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-down:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translate(-50%, 0);
+            }
+            40% {
+                transform: translate(-50%, -15px);
+            }
+            60% {
+                transform: translate(-50%, -7px);
+            }
+        }
+
+        
+        /* --- 10. Filler Content Sections --- */
+        
+        /* This ID is the target for our scroll links */
+        #content {
+            /* This pseudo-element helps offset the scroll target 
+               if you had a fixed header, but isn't needed here.
+               It's good practice to have a wrapper. */
+        }
+        
+        .content-section {
+            padding: 80px 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 25px;
+            color: dimgray; 
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: dimgray; 
+            margin-bottom: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* --- 11. Destinations Grid Styles --- */
+        .destinations-grid {
+            display: grid;
+            /* Creates 3 columns, or 2 on medium, or 1 on small */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .destination-card {
+            background: white; 
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; 
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: firebrick;
+        }
+
     </style>
-  </head>
-  
-  <body>
-    <header>
-      <h1>Total Tourism</h1>
-      <p></p>
+</head>
+<body>
+
+    <header class="hero-section">
+        
+        <div class="hero-content">
+            <h1 class="neon-text">TOTAL TOURISM </h1>
+            <a href="#content" class="cta-link">Start Your Adventure</a>
+        </div>
+
+        <a href="#content" class="scroll-down">
+            &or; 
+        </a>
+
     </header>
-  </body>
+
+   
+    <button class="question-button" id="question-btn">
+        Have a Question?
+    </button>
+
+    <main id="content">
+
+        <section class="content-section about-section">
+            <h2>About Total Tourism</h2>
+            <p>
+                Welcome to Total Tourism, your number one source for global adventures. We're dedicated to giving you the very best of travel, with a focus on dependability, customer service, and uniqueness.
+            </p>
+            <p>
+                Founded in 2023, Total Tourism has come a long way from its beginnings. When we first started out, our passion for "eco-friendly and unforgettable travel" drove us to quit our day jobs, and gave us the impetus to turn hard work and inspiration into a booming online travel agency. We now serve customers all over the world and are thrilled to be a part of the adventurous wing of the travel industry.
+            </p>
+        </section>
+
+        <section class="content-section destinations-section" style="background-color: white;"> 
+            <h2>Featured Destinations</h2>
+            
+            <div class="destinations-grid">
+                
+                <div class="destination-card">
+                    <img src="https://picsum.photos/seed/paris/400/300" alt="Paris Streets" onerror="this.src='https://placehold.co/400x300/E0E0E0/707070?text=Paris'">
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <p>Experience the city of lights, from the Eiffel Tower to the charming cafes of Montmartre.</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://picsum.photos/seed/tokyo/400/300" alt="Tokyo Skyline" onerror="this.src='https://placehold.co/400x300/E0E0E0/707070?text=Tokyo'">
+                    <div class="card-content">
+                        <h3>Tokyo, Japan</h3>
+                        <p>A dazzling blend of ancient tradition and futuristic technology. Explore temples and skyscrapers.</p>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <img src="https://picsum.photos/seed/bali/400/300" alt="Bali Beach" onerror="this.src='https://placehold.co/400x300/E0E0E0/707070?text=Bali'">
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Find your inner peace on the "Island of the Gods," known for its lush jungles and pristine beaches.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+
+    
+
+</body>
 </html>
