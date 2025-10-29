@@ -17,22 +17,42 @@ const cityData = {
         name: "Savannah, Georgia",
         description: "Explore the historic charm, cobblestone streets, and Spanish moss-draped parks of Savannah.",
         destinations: [
-            "Forsyth Park",
-            "River Street",
-            "Historic District & City Market",
-            "Bonaventure Cemetery",
-            "Wormsloe Historic Site"
+            {
+                name: "Forsyth Park",
+                description: "The iconic fountain and 30 acres of trees and paths.",
+                imageUrl: "https://placehold.co/400x300/6B8E6E/FFFFFF?text=Forsyth+Park"
+            },
+            {
+                name: "River Street",
+                description: "Cobblestone streets with shops, galleries, and restaurants.",
+                imageUrl: "https://placehold.co/400x300/5A7B9A/FFFFFF?text=River+Street"
+            },
+            {
+                name: "Historic District",
+                description: "Tour the famous 22 city squares and historic homes.",
+                imageUrl: "https://placehold.co/400x300/6E6B8E/FFFFFF?text=Historic+District"
+            }
         ]
     },
     perry: {
         name: "Perry, Georgia",
         description: "Discover the heart of Georgia, known for its friendly community and the Georgia National Fairgrounds.",
         destinations: [
-            "Georgia National Fairgrounds & Agricenter",
-            "Historic Downtown Perry",
-            "Go Fish Education Center",
-            "Perry Area Historical Museum",
-            "Flat Creek Public Fishing Area"
+            {
+                name: "Georgia National Fairgrounds",
+                description: "Host of the Georgia National Fair and other major events.",
+                imageUrl: "https://placehold.co/400x300/4A6B8A/FFFFFF?text=Fairgrounds"
+            },
+            {
+                name: "Historic Downtown Perry",
+                description: "Charming streets with unique shops and local dining.",
+                imageUrl: "https://placehold.co/400x300/8A4A6B/FFFFFF?text=Downtown+Perry"
+            },
+            {
+                name: "Go Fish Education Center",
+                description: "Interactive exhibits about Georgia's aquatic life.",
+                imageUrl: "https://placehold.co/400x300/4A8A6B/FFFFFF?text=Go+Fish+Center"
+            }
         ]
     }
 };
@@ -42,29 +62,37 @@ function showCityDetails(cityKey) {
     const city = cityData[cityKey];
     if (!city) return;
 
-    // 1. Generate the HTML for the details page
-    // We use map to turn the array of destinations into <li> elements
-    const destinationsHTML = city.destinations.map(dest => `<li>${dest}</li>`).join('');
+// 1. Generate the HTML for the destination cards
+const destinationsHTML = city.destinations.map(dest => `
+        <div class="destination-card">
+        <img src="${dest.imageUrl}" alt="${dest.name}" onerror="this.src='httpsG://placehold.co/400x300/ccc/FFFFFF?text=Image+Not+Found'">
+        <div class="card-content">
+        <h3>${dest.name}</h3>
+        <p>${dest.description}</p>
+    </div>
+</div>
+        `).join('');
 
-    const cityHTML = `
+// 2. Build the final HTML for the details section
+     const cityHTML = `
         <h2>${city.name}</h2>
         <p>${city.description}</p>
-        <ul class="destinations-list">
+        <div class="destinations-grid" style="margin-top: 40px;">
         ${destinationsHTML}
-    </ul>
-    <button id="back-to-main-btn" class="back-button">Back to Search</button>`;
+ </div>
+    <button id="back-to-main-btn" class="back-button" style="margin-top: 50px;">Back to Search</button>`;
 
-    // 2. Inject the HTML and show the details section
+// 3. Inject the HTML and show the details section
     cityDetailsSection.innerHTML = cityHTML;
     cityDetailsSection.style.display = 'block';
 
-    // 3. Hide the main page content
+// 4. Hide the main page content
     mainPageContent.style.display = 'none';
     heroSection.style.display = 'none'; // hide the hero section when showing city details
 
-    // 4. Scroll to the new city details section
+// 5. Scroll to the new city details section
     cityDetailsSection.scrollIntoView({ behavior: 'smooth' });
-    // 5. Add event listener for the new "Back" button
+// 6. Add event listener for the new "Back" button
     document.getElementById('back-to-main-btn').addEventListener('click', hideCityDetails);
 }
 
@@ -118,7 +146,7 @@ function findCities() {
     } else if (stateName === '') {
         // If the input is empty
         const emptyMessage = '<p class="info-message">Please enter a state name. (Try "Georgia")</p>';
-      
+
         resultsContainer.innerHTML = emptyMessage;
 
     } else {
