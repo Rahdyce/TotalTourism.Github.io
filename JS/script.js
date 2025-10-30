@@ -120,26 +120,24 @@ function findCities() {
         // --- MODIFIED: Added data-city attribute and cursor style ---
         const resultsHTML = `
     <div class="destinations-grid">
+        <div class="destination-card" data-city="savannah" style="cursor: pointer;" title="Click for details">
+            <img src="https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA" alt="Historic Savannah" onerror="this.src='https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA'">
+            <div class="card-content">
+                <h3>Savannah, Georgia</h3>
+                <p>${cityData.savannah.description}</p>
+            </div>
+        </div>
 
-    <div class="destination-card" data-city="savannah" style="cursor: pointer;" title="Click for details">
-        <img src="https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA" alt="Historic Savannah" onerror="this.src='https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA'">
-        <div class="card-content">
-        <h3>Savannah, Georgia</h3>
-        <p>${cityData.savannah.description}</p>
+
+        <div class="destination-card" data-city="perry" style="cursor: pointer;" title="Click for details">
+            <img src="https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA" alt="Perry, Georgia" onerror="this.src='https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA'">
+            <div class="card-content">
+                <h3>Perry, Georgia</h3>
+                <p>${cityData.perry.description}</p>
+            </div>
+        </div>
     </div>
-    </div>
-
-
-<div class="destination-card" data-city="perry" style="cursor: pointer;" title="Click for details">
-<img src="https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA" alt="Perry, Georgia" onerror="this.src='httpsTop-down
- <div class="card-content">
-<h3>Perry, Georgia</h3>
- <p>${cityData.perry.description}</p>
- </div>
-
- </div>
-</div>
- `;
+    `;
         // Insert the HTML into the results container
         resultsContainer.innerHTML = resultsHTML;
 
