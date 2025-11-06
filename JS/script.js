@@ -20,17 +20,17 @@ const cityData = {
             {
                 name: "Forsyth Park",
                 description: "The iconic fountain and 30 acres of trees and paths.",
-                imageUrl: "https://placehold.co/400x300/6B8E6E/FFFFFF?text=Forsyth+Park"
+                imageUrl: "https://visitsavannah.com/sites/default/files/styles/large_horizontal_wide/public/forsyth-park-fountain-savannah-ga_1.jpg?h=c6980913&itok=meC4PhNw"
             },
             {
                 name: "River Street",
                 description: "Cobblestone streets with shops, galleries, and restaurants.",
-                imageUrl: "https://placehold.co/400x300/5A7B9A/FFFFFF?text=River+Street"
+                imageUrl: "riverstreetphoto.jpg"
             },
             {
                 name: "Historic District",
                 description: "Tour the famous 22 city squares and historic homes.",
-                imageUrl: "https://placehold.co/400x300/6E6B8E/FFFFFF?text=Historic+District"
+                imageUrl: "historicdistrictphoto.jpg"
             }
         ]
     },
@@ -41,17 +41,17 @@ const cityData = {
             {
                 name: "Georgia National Fairgrounds",
                 description: "Host of the Georgia National Fair and other major events.",
-                imageUrl: "https://placehold.co/400x300/4A6B8A/FFFFFF?text=Fairgrounds"
+                imageUrl: "fairgroundsperryphoto.jpg"
             },
             {
                 name: "Historic Downtown Perry",
                 description: "Charming streets with unique shops and local dining.",
-                imageUrl: "https://placehold.co/400x300/8A4A6B/FFFFFF?text=Downtown+Perry"
+                imageUrl: "downtownperryphoto.jpg"
             },
             {
                 name: "Go Fish Education Center",
                 description: "Interactive exhibits about Georgia's aquatic life.",
-                imageUrl: "https://placehold.co/400x300/4A8A6B/FFFFFF?text=Go+Fish+Center"
+                imageUrl: "gofishperryphoto.jpg"
             }
         ]
     }
@@ -121,7 +121,7 @@ function findCities() {
         const resultsHTML = `
     <div class="destinations-grid">
         <div class="destination-card" data-city="savannah" style="cursor: pointer;" title="Click for details">
-            <img src="https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA" alt="Historic Savannah" onerror="this.src='https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA'">
+            <img src="savannahgaphoto.jpg" alt="Historic Savannah" onerror="this.src='https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA'">
             <div class="card-content">
                 <h3>Savannah, Georgia</h3>
                 <p>${cityData.savannah.description}</p>
@@ -130,7 +130,7 @@ function findCities() {
 
 
         <div class="destination-card" data-city="perry" style="cursor: pointer;" title="Click for details">
-            <img src="https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA" alt="Perry, Georgia" onerror="this.src='https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA'">
+            <img src="perrygaphoto.jpg" alt="Perry, Georgia" onerror="this.src='https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA'">
             <div class="card-content">
                 <h3>Perry, Georgia</h3>
                 <p>${cityData.perry.description}</p>
