@@ -323,6 +323,162 @@
             background-color: darkslategray;
             transform: translateY(-2px);
         }
+        
+        /* --- Extra Info Section --- */
+        .extra-info {
+            margin-top: 30px;
+            padding: 25px 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .extra-info h3 {
+            color: firebrick;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid firebrick;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Reset list layout */
+        .extra-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 20px; /* spacing between boxes */
+        }
+
+        /* Each list item becomes its own box */
+        .extra-info ul li {
+            background: #f9f9f9;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 18px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        /* Subtle hover animation */
+        .extra-info ul li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            border-color: firebrick;
+        }
+
+        /* Style the title in each box */
+        .extra-info strong {
+            display: block;
+            color: #222;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        /* Text under the title */
+        .extra-info ul li {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .restaurant-box {
+            background: #f9f9f9;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            padding: 18px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .restaurant-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            border-color: firebrick;
+        }
+
+        .restaurant-box h4 {
+            margin-bottom: 6px;
+            color: firebrick;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+        }
+
+        .restaurant-details {
+            margin-top: 10px;
+            background: #fff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .restaurant-details a {
+            color: firebrick;
+            text-decoration: none;
+        }
+
+        .restaurant-details a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tourist info section header style */
+        .tourist-header {
+            position: relative;
+            height: 40vh; /* Adjust as needed */
+            background-size: cover;
+            background-position: center center;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            margin-bottom: 30px;
+        }
+
+        /* Overlay effect to darken the image slightly */
+        .tourist-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        /* City name text */
+        .tourist-header h2 {
+            position: relative;
+            z-index: 1;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .tourist-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tourist-content h3 {
+            color: firebrick;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+
 
         
 
