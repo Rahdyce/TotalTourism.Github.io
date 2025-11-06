@@ -17,20 +17,21 @@ const cityData = {
         name: "Savannah, Georgia",
         description: "Explore the historic charm, cobblestone streets, and Spanish moss-draped parks of Savannah.",
         destinations: [
+            
             {
-                name: "Forsyth Park",
-                description: "The iconic fountain and 30 acres of trees and paths.",
-                imageUrl: "https://visitsavannah.com/sites/default/files/styles/large_horizontal_wide/public/forsyth-park-fountain-savannah-ga_1.jpg?h=c6980913&itok=meC4PhNw"
+                name: "Food",
+                description: "Places to eat in Savannah, GA.",
+                imageUrl: "other photos/traditionalgeorgiacuisines.jpg"
             },
             {
-                name: "River Street",
-                description: "Cobblestone streets with shops, galleries, and restaurants.",
-                imageUrl: "riverstreetphoto.jpg"
+                name: "Things To Do",
+                description: "Events, Museums, Recreational Activities, etc in Savannah, GA",
+                imageUrl: "other photos/thingstodo.jpg"
             },
             {
-                name: "Historic District",
-                description: "Tour the famous 22 city squares and historic homes.",
-                imageUrl: "historicdistrictphoto.jpg"
+                name: "Lodging",
+                description: "Where do you want to stay? Hostels, hotels, and airbnbs",
+                imageUrl: "other photos/lodgingsav.jpg"
             }
         ]
     },
@@ -39,19 +40,19 @@ const cityData = {
         description: "Discover the heart of Georgia, known for its friendly community and the Georgia National Fairgrounds.",
         destinations: [
             {
-                name: "Georgia National Fairgrounds",
-                description: "Host of the Georgia National Fair and other major events.",
-                imageUrl: "fairgroundsperryphoto.jpg"
+                name: "Food",
+                description: "Places to eat in Perry, GA.",
+                imageUrl: "other photos/traditionalgeorgiacuisines.jpg"
             },
             {
-                name: "Historic Downtown Perry",
-                description: "Charming streets with unique shops and local dining.",
-                imageUrl: "downtownperryphoto.jpg"
+                name: "Things To Do",
+                description: "Events, Museums, Recreational Activities, etc in Perry, GA",
+                imageUrl: "savannah_perry location_photos/fairgroundsperryphoto.jpg"
             },
             {
-                name: "Go Fish Education Center",
-                description: "Interactive exhibits about Georgia's aquatic life.",
-                imageUrl: "gofishperryphoto.jpg"
+                name: "Lodging",
+                description: "Where do you want to stay? Hostels, hotels, and airbnbs",
+                imageUrl: "other photos/lodgingperry.jpg"
             }
         ]
     }
@@ -121,7 +122,7 @@ function findCities() {
         const resultsHTML = `
     <div class="destinations-grid">
         <div class="destination-card" data-city="savannah" style="cursor: pointer;" title="Click for details">
-            <img src="savannahgaphoto.jpg" alt="Historic Savannah" onerror="this.src='https://placehold.co/400x300/6B8E6E/FFFFFF?text=Savannah, GA'">
+            <img src="savannah_perry location_photos/savannahgaphoto.jpg" alt="Historic Savannah" onerror="this.src='savannahgaphoto.jpg'">
             <div class="card-content">
                 <h3>Savannah, Georgia</h3>
                 <p>${cityData.savannah.description}</p>
@@ -130,7 +131,7 @@ function findCities() {
 
 
         <div class="destination-card" data-city="perry" style="cursor: pointer;" title="Click for details">
-            <img src="perrygaphoto.jpg" alt="Perry, Georgia" onerror="this.src='https://placehold.co/400x300/4A6B8A/FFFFFF?text=Perry, GA'">
+            <img src="savannah_perry location_photos/perrygaphoto.jpg" alt="Perry, Georgia" onerror="this.src='perrygaphoto.jpg'">
             <div class="card-content">
                 <h3>Perry, Georgia</h3>
                 <p>${cityData.perry.description}</p>
