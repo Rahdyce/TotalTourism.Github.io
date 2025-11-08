@@ -57,12 +57,70 @@ const cityData = {
             {
                 name: "Things To Do",
                 description: "Events, Museums, Recreational Activities, etc in Savannah, GA",
-                imageUrl: "other photos/thingstodo.jpg"
+                imageUrl: "other photos/thingstodo.jpg",
+                extraInfo: [                   
+                    {
+                        name: "River Street",
+                        description: "Savannahs Waterfront hub with shops, dining, and entertainment. Here you can stroll along the cobblestone streets, enjoy scenic views of the Savannah River, and explore a variety of boutiques, galleries, and eateries. Some of these places include Wet Willies, Joes Crab Shack, and the Savannah MarketPlace." ,
+                        details: {
+                        address: "River St, Savannah, GA 31401",
+                        phone: "(912) 234-4608",
+                        website: "https://visitsavannah.com/"
+                        }
+                    },
+                    {
+                        name: "Front Porch Improv",
+                        description: "Interested in comedy? Check out Front Porch Improv for some laughs and fun times. They offer improv shows, classes, and workshops for all skill levels. Whether you're a beginner or an experienced performer, Front Porch Improv provides a welcoming and supportive environment to explore the art of improvisation. Check out their website for showtimes and class schedules.",
+                        details: {
+                        address: "210 W Victory Dr, Savannah, GA 31405",
+                        phone: "(843) 868-1553",
+                        website: "https://www.frontporchimprov.com/"
+                        }
+                    },
+                    {
+                        name: "Savnnah RiverBoat Cruises",
+                        description: "Go for a Cruise down the Savannah River and see marvelous sights while enjoying and nice meal .",
+                        details: {
+                        address: "9 East River Street, Savannah, GA 31412",
+                        phone: "(912) 472-1501",
+                        website: "https://savannahriverboat.com/all-cruises/"
+                        }
+                    }
+                 ]            
             },
             {
                 name: "Lodging",
-                description: "Where do you want to stay? Hostels, hotels, and airbnbs",
-                imageUrl: "other photos/lodgingsav.jpg"
+                description: "Savnnah offers many lodging options including hotels, and Airbnbs. Some are even locateed near Savnnah's Historic District. Below are some of the top rated hotels and a link to their website for more infomration.",
+                imageUrl: "other photos/lodgingsav.jpg",
+                extraInfo: [                   
+                    {
+                        name: "River Street Inn",
+                        description: "The savannah River Street Inn is a charming boutique hotel located in the heart of Savannah's historic district. This elegant inn offers comfortable accommodations with stunning views of the Savannah River and easy access to the city's top attractions, shops, and restaurants. Guests can enjoy amenities such as complimentary breakfast, a rooftop terrace, and personalized service, making it an ideal choice for travelers seeking a memorable stay in Savannah.", 
+                        details: {
+                        address: "2 W Bay St, Savannah, GA 31401",
+                        phone: " (912) 236-6400",
+                        website: "https://www.riverstreetinn.com/"
+                        }
+                    },
+                    {
+                        name: "Hyatt Regency Savannah",
+                        description: "Another Hotel option is the Hyatt Regency Savannah. This upscale hotel is situated along the Savannah River, offering picturesque views and a convenient location for exploring the city's historic district. The Hyatt Regency Savannah features modern amenities, including a rooftop pool, fitness center, and multiple dining options. With its elegant accommodations and excellent service, it's a great choice for both leisure and business travelers visiting Savannah.",
+                        details: {
+                        address: "210 W Victory Dr, Savannah, GA 31405",
+                        phone: "((912) 238-1234",
+                        website: "https://www.hyatt.com/hyatt-regency/en-US/savrs-hyatt-regency-savannah?src=corp_lclb_google_seo_savrs&utm_source=google&utm_medium=organic&utm_campaign=lmr"
+                        }
+                    },
+                    {
+                        name: "Marriott Savannah Riverfront",
+                        description: "Mariott Savannah RiverFront is another top rated hotel located within the savannah Historic District.",
+                        details: {
+                        address: "100 General McIntosh Blvd, Savannah, GA 31401",
+                        phone: "(912) 233-7722",
+                        website: "https://www.marriott.com/en-us/hotels/savrf-marriott-savannah-riverfront/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0"
+                        }
+                    }
+                 ]            
             }
         ]
     },
@@ -73,17 +131,105 @@ const cityData = {
             {
                 name: "Food",
                 description: "Places to eat in Perry, GA.",
-                imageUrl: "other photos/traditionalgeorgiacuisines.jpg"
+                imageUrl: "other photos/traditionalgeorgiacuisines.jpg",
+                extraInfo: [                   
+                    {
+                        name: "The Swanson",
+                        description: "Classic Southern cuisine served in a beautiful historic home dating back to the 1790s. It offers a charming atmosphere and home-cooked favorites like fried chicken, collard green soup, and meatloaf. A local favorite for a traditional Southern meal.", 
+                        details: {
+                        address: "933 Carroll St, Perry, GA 31069",
+                        phone: " (478) 987-1938",
+                        website: "https://theswanson.com/"
+                        }
+                    },
+                    {
+                        name: "Ghost Runner Pizza",
+                        description: "This spot stands out for its specialty sourdough crust pizza baked in a wood-fired oven. It offers a unique focus on local craft beer and an upscale-casual, neighborhood vibe in the heart of downtown.",
+                        details: {
+                        address: "742 Main St, Perry, GA 31069",
+                        phone: "N/A",
+                        website: "https://ghostrunnerpizza.square.site/"
+                        }
+                    },
+                    {
+                        name: "The Perfect Pear",
+                        description: "This award-winning cafe specializes in elevating Southern favorites for lunch and Sunday brunch. From their legendary, homemade Pimento Cheese to their creative seasonal salads and comfort sandwiches, every dish is crafted with fresh, local ingredients. It’s the perfect spot for a cozy, charming midday retreat.",
+                        details: {
+                        address: "922 Carroll St, Perry, GA 31069",
+                        phone: "(478) 224-7327",
+                        website: "https://www.perfectpearperry.com/"
+                        }
+                    }
+                 ]            
             },
             {
                 name: "Things To Do",
                 description: "Events, Museums, Recreational Activities, etc in Perry, GA",
-                imageUrl: "savannah_perry location_photos/fairgroundsperryphoto.jpg"
+                imageUrl: "savannah_perry location_photos/fairgroundsperryphoto.jpg",
+                extraInfo: [                   
+                    {
+                        name: "Go Fish Educational Center",
+                        description: "The Go Fish Education Center is a family-friendly attraction located in , Georgia, that offers interactive exhibits and educational programs focused on the local aquatic ecosystem. Visitors can learn about fish species, conservation efforts, and the importance of wetlands through hands-on activities and guided tours. The center also features aquariums, touch tanks, and outdoor trails, making it an engaging destination for all ages to explore and appreciate the natural environment of the region.", 
+                        details: {
+                        address: "1255 Perry Pkwy, Perry, GA 31069",
+                        phone: "(478) 988-6701",
+                        website: "https://gofisheducationcenter.com/"
+                        }
+                    },
+                    {
+                        name: "Perry National Fairgrounds & Agricenter",
+                        description: "Home to the annual Georgia National Fair, the Perry National Fairgrounds & Agricenter is a versatile event venue located in Perry, Georgia. The fairgrounds host a variety of events throughout the year, including agricultural exhibitions, concerts, trade shows, and community gatherings. With spacious facilities, including indoor arenas, outdoor pavilions, and exhibition halls, the fairgrounds provide a dynamic space for both large-scale events and local activities. Visitors can enjoy a range of entertainment options, from thrilling rides and live performances to educational displays and competitions, making it a vibrant hub for fun and culture in the region.",
+                        details: {
+                        address: " 401 Golden Isles Pkwy, Perry, GA 31069",
+                        phone: "(478) 987-3247",
+                        website: "https://www.gnfa.com/"
+                        }
+                    },
+                    {
+                        name: "Rozar Park",
+                        description: "Care for a bit of an outdoor fun time. Well Rozar park is a place to visit. They offer a Disc Golf Course, Fishing Ponds, and playgrounds for the kids.",
+                        details: {
+                        address: "1060 Keith Dr, Perry, GA 31069",
+                        phone: "(478) 988-2860",
+                        website: "https://www.perry-ga.gov/leisure-services/parks/rozar-park"
+                        }
+                    }
+                 ]            
             },
             {
                 name: "Lodging",
                 description: "Where do you want to stay? Hostels, hotels, and airbnbs",
-                imageUrl: "other photos/lodgingperry.jpg"
+                imageUrl: "other photos/lodgingperry.jpg",
+                extraInfo: [                   
+                    {
+                        name: "Microtel by Wyndham Perry National Fairground Area I-75",
+                        description: "This hotel offers good rates and is quite close to the Perry National Fairgrounds. Making it a really great choice if you want to have fun explore all that the fairgrounds, and Perry Ga has to offer.", 
+                        details: {
+                        address: "110 Fairview Dr, Perry, GA 31069",
+                        phone: "(478) 287-4399",
+                        website: "https://www.miperry.com/?CID=LC:5b3ss9kd80xe5ox:30985&iata=00093796"
+                        }
+                    },
+                    {
+                        name: "TownePlace Suites by Marriott Perry Georgia National Fairgrounds",
+                        description: "Another great hotel option is the TownePlace Suites by Marriott Perry Georgia National Fairgrounds. This hotel offers spacious suites with fully equipped kitchens, making it ideal for longer stays or families. Guests can enjoy amenities such as a fitness center, outdoor pool, and complimentary breakfast. Its convenient location near the Perry National Fairgrounds and other local attractions makes it a popular choice for travelers visiting the area.",
+                        details: {
+                        address: "100 General Courtney Hodges Blvd, Perry, GA 31069",
+                        phone: "(478) 732-1148",
+                        website: "https://www.gnfa.com/"
+                        }
+                    },
+                    {
+                        name: "La Quinta Inn & Suites by Wyndham Perry",
+                        description: "La Quinta Inn & Suites by Wyndham Perry is a comfortable and affordable hotel option in Perry, Georgia. It offers modern amenities such as free Wi-Fi, an outdoor pool, and a complimentary breakfast buffet. The hotel is conveniently located near major highways and local attractions, making it a great choice for both business and leisure travelers looking for a pleasant stay in the area.",
+                        details: {
+                        address: "102 Plaza Dr, Perry, GA 31069",
+                        phone: "(478) 287-4431",
+                        website: "https://www.wyndhamhotels.com/laquinta/perry-georgia/la-quinta-by-wyndham-perry/overview?CID=LC:6ysy27krtpcrqev:08602&iata=00093796"
+                        }
+                    }
+                 ]            
+                
             }
         ]
     }
