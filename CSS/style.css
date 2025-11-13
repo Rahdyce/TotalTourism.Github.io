@@ -478,6 +478,24 @@
             margin-top: 20px;
         }
 
+        /* Logo is always in the bottom left corner */
+        .corner-logo {
+            position: fixed;
+            bottom: 20px;      
+            left: 20px;
+            height:180px;        
+            width: 260px;      
+            z-index: 9999;     
+            opacity: 0.95;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .corner-logo:hover {
+            transform: scale(1.05);
+            opacity: 1;
+            cursor: pointer;
+        }
+
 
 
         
