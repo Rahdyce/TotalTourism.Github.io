@@ -154,7 +154,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 25px;
-            color: dimgray; 
+            color: dimgray;
         }
 
         .content-section p1 {
@@ -496,9 +496,6 @@
             cursor: pointer;
         }
 
-
-
-        
-
-        
-
+        #cityName {
+            color: lightgrey;
+        }

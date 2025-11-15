@@ -55,8 +55,8 @@ const cityData = {
                  ]            
             },
             {
-                name: "Things To Do",
-                description: "Events, Museums, Recreational Activities, etc in Savannah, GA",
+                name: "Activities", // Formerly "Things To Do"
+                description: "Events, museums, and more in Savannah, GA",
                 imageUrl: "other photos/thingstodo.jpg",
                 extraInfo: [                   
                     {
@@ -90,9 +90,9 @@ const cityData = {
             },
             {
                 name: "Lodging",
-                description: "Savannah offers many lodging options including hotels, and Airbnbs. Some are even locateed near Savannah's Historic District. Below are some of the top rated hotels and a link to their website for more infomration.",
+                description: "Savannah offers many lodging options, including hotels and Airbnbs. Some are even located near Savannah's Historic District. Below are some of the top rated hotels and a link to their website for more information.",
                 imageUrl: "other photos/lodgingsav.jpg",
-                extraInfo: [                   
+                extraInfo: [
                     {
                         name: "River Street Inn",
                         description: "The Savannah River Street Inn is a charming boutique hotel located in the heart of Savannah's historic district. This elegant inn offers comfortable accommodations with stunning views of the Savannah River and easy access to the city's top attractions, shops, and restaurants. Guests can enjoy amenities such as complimentary breakfast, a rooftop terrace, and personalized service, making it an ideal choice for travelers seeking a memorable stay in Savannah.", 
@@ -163,13 +163,13 @@ const cityData = {
                  ]            
             },
             {
-                name: "Things To Do",
-                description: "Events, Museums, Recreational Activities, etc in Perry, GA",
+                name: "Activities", // Formerly "Things To Do"
+                description: "Events, museums, and more in Perry, GA.",
                 imageUrl: "savannah_perry location_photos/fairgroundsperryphoto.jpg",
                 extraInfo: [                   
                     {
                         name: "Go Fish Educational Center",
-                        description: "The Go Fish Education Center is a family-friendly attraction located in , Georgia, that offers interactive exhibits and educational programs focused on the local aquatic ecosystem. Visitors can learn about fish species, conservation efforts, and the importance of wetlands through hands-on activities and guided tours. The center also features aquariums, touch tanks, and outdoor trails, making it an engaging destination for all ages to explore and appreciate the natural environment of the region.", 
+                        description: "The Go Fish Education Center is a family-friendly attraction located in Georgia that offers interactive exhibits and educational programs focused on the local aquatic ecosystem. Visitors can learn about fish species, conservation efforts, and the importance of wetlands through hands-on activities and guided tours. The center also features aquariums, touch tanks, and outdoor trails, making it an engaging destination for all ages to explore and appreciate the natural environment of the region.", 
                         details: {
                         address: "1255 Perry Pkwy, Perry, GA 31069",
                         phone: "(478) 988-6701",
@@ -203,7 +203,7 @@ const cityData = {
                 extraInfo: [                   
                     {
                         name: "Microtel by Wyndham Perry National Fairground Area I-75",
-                        description: "This hotel offers good rates and is quite close to the Perry National Fairgrounds. Making it a really great choice if you want to have fun explore all that the fairgrounds, and Perry Ga has to offer.", 
+                        description: "This hotel offers good rates and is quite close to the Perry National Fairgrounds. Making it a really great choice if you want to have fun explore all that the fairgrounds, and Perry have to offer.", 
                         details: {
                         address: "110 Fairview Dr, Perry, GA 31069",
                         phone: "(478) 287-4399",
@@ -311,9 +311,10 @@ function showTouristInformation(cityKey, destIndex) {
       </div>
     `).join('');
 
+    console.log(dest)
     extraInfoHTML = `
       <div class="extra-info">
-        <h3>Top Restaurants</h3>
+        <h3>Top ${dest.extraInfo[0]}</h3>
         ${restaurantList}
       </div>
     `;
@@ -325,7 +326,7 @@ function showTouristInformation(cityKey, destIndex) {
   // Build the main destination HTML
   const destHTML = `
     <div class="tourist-header" style="background-image: url('${cityHeaderImage}');">
-      <h2>${city.name}</h2>
+      <h2 id="cityName">${city.name}</h2>
     </div>
 
     <div class="tourist-content">
