@@ -35,7 +35,7 @@ const cityData = {
                         }
                     },
                     {
-                        name: "Mrs. Wilkes’ Dining Room",
+                        name: "Mrs. Wilkes' Dining Room",
                         description: "Family-style Southern classics.",
                         details: {
                         address: "107 W Jones St, Savannah, GA 31401",
@@ -44,7 +44,7 @@ const cityData = {
                         }
                     },
                     {
-                        name: "Leopold’s Ice Cream",
+                        name: "Leopold's Ice Cream",
                         description: "A must-visit dessert spot since 1919.",
                         details: {
                         address: "212 E Broughton St, Savannah, GA 31401",
@@ -56,7 +56,7 @@ const cityData = {
             },
             {
                 name: "Activities", // Formerly "Things To Do"
-                description: "Events, museums, and more in Savannah, GA",
+                description: "Events, museums, and more in Savannah, GA.",
                 imageUrl: "other photos/thingstodo.jpg",
                 extraInfo: [                   
                     {
@@ -153,7 +153,7 @@ const cityData = {
                     },
                     {
                         name: "The Perfect Pear",
-                        description: "This award-winning cafe specializes in elevating Southern favorites for lunch and Sunday brunch. From their legendary, homemade Pimento Cheese to their creative seasonal salads and comfort sandwiches, every dish is crafted with fresh, local ingredients. It’s the perfect spot for a cozy, charming midday retreat.",
+                        description: "This award-winning cafe specializes in elevating Southern favorites for lunch and Sunday brunch. From their legendary, homemade Pimento Cheese to their creative seasonal salads and comfort sandwiches, every dish is crafted with fresh, local ingredients. It's the perfect spot for a cozy, charming midday retreat.",
                         details: {
                         address: "922 Carroll St, Perry, GA 31069",
                         phone: "(478) 224-7327",
@@ -166,7 +166,7 @@ const cityData = {
                 name: "Activities", // Formerly "Things To Do"
                 description: "Events, museums, and more in Perry, GA.",
                 imageUrl: "savannah_perry location_photos/fairgroundsperryphoto.jpg",
-                extraInfo: [                   
+                extraInfo: [
                     {
                         name: "Go Fish Educational Center",
                         description: "The Go Fish Education Center is a family-friendly attraction located in Georgia that offers interactive exhibits and educational programs focused on the local aquatic ecosystem. Visitors can learn about fish species, conservation efforts, and the importance of wetlands through hands-on activities and guided tours. The center also features aquariums, touch tanks, and outdoor trails, making it an engaging destination for all ages to explore and appreciate the natural environment of the region.", 
@@ -299,6 +299,7 @@ function showTouristInformation(cityKey, destIndex) {
   // Build extra info section if available (like restaurants)
   let extraInfoHTML = '';
   if (Array.isArray(dest.extraInfo)) {
+    // NOTE: naming it "restaurantList" is very misleading, consider correcting (very low priority)
     const restaurantList = dest.extraInfo.map((r, index) => `
       <div class="restaurant-box" data-index="${index}">
         <h4>${r.name}</h4>
@@ -311,10 +312,19 @@ function showTouristInformation(cityKey, destIndex) {
       </div>
     `).join('');
 
-    console.log(dest)
+    // Set an accurate category (used to say "Top Restaurants" even for activities and lodging)
+    let feature;
+    if (dest?.name === "Food"){
+        feature = "Restaurants"
+    } else if (dest?.name === "Activities"){
+        feature = "Activities"
+    } else if (dest?.name === "Lodging"){
+        feature = "Accommodations"
+    }
+
     extraInfoHTML = `
       <div class="extra-info">
-        <h3>Top ${dest.extraInfo[0]}</h3>
+        <h3>Top ${feature}</h3>
         ${restaurantList}
       </div>
     `;
