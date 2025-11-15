@@ -61,7 +61,7 @@ const cityData = {
                 extraInfo: [                   
                     {
                         name: "River Street",
-                        description: "Savannahs Waterfront hub with shops, dining, and entertainment. Here you can stroll along the cobblestone streets, enjoy scenic views of the Savannah River, and explore a variety of boutiques, galleries, and eateries. Some of these places include Wet Willies, Joes Crab Shack, and the Savannah MarketPlace." ,
+                        description: "Savannah's Waterfront hub with shops, dining, and entertainment. Here you can stroll along the cobblestone streets, enjoy scenic views of the Savannah River, and explore a variety of boutiques, galleries, and eateries. Some of these places include Wet Willies, Joes Crab Shack, and the Savannah MarketPlace." ,
                         details: {
                         address: "River St, Savannah, GA 31401",
                         phone: "(912) 234-4608",
@@ -78,8 +78,8 @@ const cityData = {
                         }
                     },
                     {
-                        name: "Savnnah RiverBoat Cruises",
-                        description: "Go for a Cruise down the Savannah River and see marvelous sights while enjoying and nice meal .",
+                        name: "Savannah Riverboat Cruises",
+                        description: "Go for a cruise down the Savannah River and see marvelous sights while enjoying a nice meal.",
                         details: {
                         address: "9 East River Street, Savannah, GA 31412",
                         phone: "(912) 472-1501",
@@ -90,12 +90,12 @@ const cityData = {
             },
             {
                 name: "Lodging",
-                description: "Savnnah offers many lodging options including hotels, and Airbnbs. Some are even locateed near Savnnah's Historic District. Below are some of the top rated hotels and a link to their website for more infomration.",
+                description: "Savannah offers many lodging options including hotels, and Airbnbs. Some are even locateed near Savannah's Historic District. Below are some of the top rated hotels and a link to their website for more infomration.",
                 imageUrl: "other photos/lodgingsav.jpg",
                 extraInfo: [                   
                     {
                         name: "River Street Inn",
-                        description: "The savannah River Street Inn is a charming boutique hotel located in the heart of Savannah's historic district. This elegant inn offers comfortable accommodations with stunning views of the Savannah River and easy access to the city's top attractions, shops, and restaurants. Guests can enjoy amenities such as complimentary breakfast, a rooftop terrace, and personalized service, making it an ideal choice for travelers seeking a memorable stay in Savannah.", 
+                        description: "The Savannah River Street Inn is a charming boutique hotel located in the heart of Savannah's historic district. This elegant inn offers comfortable accommodations with stunning views of the Savannah River and easy access to the city's top attractions, shops, and restaurants. Guests can enjoy amenities such as complimentary breakfast, a rooftop terrace, and personalized service, making it an ideal choice for travelers seeking a memorable stay in Savannah.", 
                         details: {
                         address: "2 W Bay St, Savannah, GA 31401",
                         phone: " (912) 236-6400",
@@ -432,6 +432,11 @@ resultsContainer.addEventListener('click', (event) => {
     // If a card was clicked and it has a 'data-city' attribute
     if (card && card.dataset.city) {
         showCityDetails(card.dataset.city);
+
+        // Scroll down by correct %
+        let unit = document.documentElement.scrollHeight / 100;
+        let y_percent = 7.5 * unit;
+        window.scrollTo(0, y_percent); // We're setting the scrollTo to y = 7.5% of scroll height
 
     }
 });
